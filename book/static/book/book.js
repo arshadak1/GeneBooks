@@ -40,7 +40,7 @@ const page_filter_btn = document.getElementById('page-filter-btn')
 
 const book_rating_filter = document.getElementById('book-rating-filter')
 
-
+const clear_filters = document.getElementById('clear-filters')
 
 
 // -----------------------------------------------------------
@@ -123,8 +123,10 @@ const getBooks = () => {
         max_page: max_page_filter.value.trim(),
         rating: book_rating_filter.value.trim()
     }
-
+    
     request.open('GET', `${endpoint}?params=${JSON.stringify(params)}`, true)
+    
+    request.setRequestHeader("Access-Control-Allow-Headers", "X-Requested-With, content-type")
 
     request.addEventListener('readystatechange', () => {
         if (request.readyState == 4 && request.status == 200) {
@@ -175,6 +177,7 @@ const submitBookDetails = (e) => {
         // setting neccesary headers
         request.setRequestHeader('Content-type', 'application/json')
         request.setRequestHeader('X-CSRFToken', csrf)
+        request.setRequestHeader("Access-Control-Allow-Headers", "X-Requested-With, content-type")
 
         request.addEventListener('readystatechange', () => {
             if (request.readyState == 4) {
@@ -210,6 +213,14 @@ const changeRatingText = ( id, target) => {
     }
 }
 
+const resetFilters = () => {
+    publish_year_from_filter.value = ''
+    publish_year_upto_filter.value = ''
+    min_page_filter.value = ''
+    max_page_filter.value = ''
+    book_rating_filter.value = ''
+    getBooks()
+}
 
 // ___________________________________________________________
 
@@ -237,6 +248,8 @@ book_to_csv.addEventListener('click', () => toCSV('books-csv', 'books-csv-downlo
 csv_alert.querySelector('button').addEventListener('click', () => {
     csv_alert.classList.add('d-none')
 })
+
+clear_filters.addEventListener('click', resetFilters)
 
 // ___________________________________________________________
 

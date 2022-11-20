@@ -1,5 +1,5 @@
-export const API_ENDPOINT = 'http://localhost:8000/api/'
-export const ENDPOINT = 'http://localhost:8000/'
+export const ENDPOINT = window.location.origin
+export const API_ENDPOINT = `${ENDPOINT}/api/`
 
 export const TODAY = new Date()
 
@@ -77,10 +77,12 @@ export const setCardDetails = (card_details) => {
 }
 
 export const toCSV = (url, download_url) => {
-    const endpoint = `${ENDPOINT}${url}/`
+    const endpoint = `${ENDPOINT}/${url}/`
     const request = new XMLHttpRequest()
 
     request.open('GET', `${endpoint}`, true)
+    request.setRequestHeader("Access-Control-Allow-Headers", "X-Requested-With, content-type")
+
     const csv_alert = document.getElementById('csv-alerts')
 
 

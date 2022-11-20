@@ -13,6 +13,10 @@ Books - GeneBooks
         <span><strong>Success! </strong><a href="#" class="text-primary text-decoration-none">Click here</a> if you wish to download the csv file.</span>
         <button type="button" class="btn-close" aria-label="Close"></button>
       </div>
+      <!-- nav -->
+      <div class="d-flex ms-5 my-3 justify-content-end">
+        <a href="{% url 'authors-home' %}" class="text-decoration-none">Go to Authors</a>
+      </div> 
     <!-- heading -->
     <div
         class="d-flex justify-content-center align-items-center justify-content-md-between flex-column flex-md-row gy-2 mx-5">
@@ -121,6 +125,9 @@ Books - GeneBooks
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="row">
+                                    <div class="col-12 ms-auto d-flex justify-content-end mb-3">
+                                        <p class="link-primary text-sm text-decoration-none" id="clear-filters">Clear filters</p>
+                                    </div>
                                     <!-- YEAR filter -->
                                     <div class="col border-end ">
                                         <p class="fw-bold">Published Year</p>

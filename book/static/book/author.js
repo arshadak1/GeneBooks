@@ -7,6 +7,7 @@ const add_author_btn = document.getElementById('add-author')
 const author_search_btn = document.getElementById('author-search-btn')
 const author_search_field = document.getElementById('author-field')
 
+// filters
 const age_filter_btn = document.getElementById('age-filter-btn')
 const age_filter_min_input = document.getElementById('age-filter-min-input')
 const age_filter_max_input = document.getElementById('age-filter-max-input')
@@ -16,7 +17,7 @@ const female_checkbox = document.getElementById('female-checkbox')
 const male_checkbox = document.getElementById('male-checkbox')
 const others_checkbox = document.getElementById('others-checkbox')
 
-
+const clear_filters = document.getElementById('clear-filters')
 
 // author popup for inputs
 const author_name = document.getElementById('author-name-input')
@@ -28,6 +29,8 @@ const author_country = document.getElementById('author-country-input')
 // csv 
 const authors_to_csv_btn = document.getElementById('authors-to-csv')
 const csv_alert = document.getElementById('csv-alerts')
+
+
 
 
 /*
@@ -120,6 +123,7 @@ const submitAuthorDetails = (e) => {
         // setting neccesary headers
         request.setRequestHeader('Content-type', 'application/json')
         request.setRequestHeader('X-CSRFToken', csrf)
+        request.setRequestHeader("Access-Control-Allow-Headers", "X-Requested-With, content-type")
 
         request.addEventListener('readystatechange', () => {
             if (request.readyState == 4) {
@@ -149,12 +153,15 @@ const submitAuthorDetails = (e) => {
 const getAuthors = () => {
     const csrf = getCsrf()
 
-    const endpoint = `${API_ENDPOINT, ENDPOINT}authors/`
+    const endpoint = `${API_ENDPOINT}authors/`
     const request = new XMLHttpRequest()
+
     const selected_gender = {male: male_checkbox.checked, female: female_checkbox.checked, others: others_checkbox.checked}
     const params = {author: author_search_field.value.trim(), min_age: age_filter_min_input.value.trim(), max_age: age_filter_max_input.value.trim(), gender: selected_gender}
 
     request.open('GET', `${endpoint}?params=${JSON.stringify(params)}`, true)
+
+    request.setRequestHeader("Access-Control-Allow-Headers", "X-Requested-With, content-type")
 
     request.addEventListener('readystatechange', () => {
         if (request.readyState == 4 && request.status == 200) {
@@ -167,6 +174,14 @@ const getAuthors = () => {
     request.send()
 }
 
+const resetFilters = () => {
+    age_filter_max_input.value = ''
+    age_filter_min_input.value = ''
+    female_checkbox.checked = false
+    male_checkbox.checked = false
+    others_checkbox.checked = false
+    getAuthors()
+}
 // event listeners
 add_author_btn.addEventListener('click', submitAuthorDetails)
 
@@ -184,4 +199,6 @@ csv_alert.querySelector('button').addEventListener('click', () => {
 })
 
 authors_to_csv_btn.addEventListener('click', () => toCSV('authors-csv', 'authors-csv-download'))
+
+clear_filters.addEventListener('click', resetFilters)
 // getAuthors()

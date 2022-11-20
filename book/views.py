@@ -49,7 +49,7 @@ def _downloadModelCSV(file, prefered_file_name):
     try:
         with open(file.file.path, 'rb') as f:
             response = HttpResponse(f.read(), content_type="text/csv")
-            response['Content-Deposition'] = f'inline; filename={prefered_file_name}'
+            response['Content-Deposition'] = f'attachment; filename={prefered_file_name}'
         return response
 
     except:

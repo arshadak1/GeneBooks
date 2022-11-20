@@ -25,10 +25,11 @@ SECRET_KEY = 'django-insecure-fna=!pm5x^r9id84@316hvf1me%7@lt!m#k%p%6nj7+zi6kk_=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.164.94', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
+CORS_ORIGIN_ALLOW_ALL=True
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -40,10 +41,12 @@ INSTALLED_APPS = [
     # custom apps
     'book',
     'api',
+    'corsheaders',
     'rest_framework',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -58,7 +61,7 @@ ROOT_URLCONF = 'GeneBooks.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [Path.joinpath(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
