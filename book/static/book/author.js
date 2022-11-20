@@ -111,7 +111,7 @@ const submitAuthorDetails = (e) => {
     else {
         const csrf = getCsrf()
 
-        const endpoint = `${API_ENDPOINT, ENDPOINT}create/author/`
+        const endpoint = `${API_ENDPOINT}create/author/`
         const request = new XMLHttpRequest()
         const params = { "name": author_name.value.trim(), "age": Number(author_age.value.trim()), "gender": author_gender.value, "country": author_country.value.trim() }
 
