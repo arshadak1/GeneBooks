@@ -1,0 +1,21 @@
+.hidden {
+    display: none;
+}
+
+.input-search {
+    font-size: 1rem !important;
+}
+/* px-3 py-2 rounded-circle bg-secondary text-white" */
+
+.rating {
+    background-color: #3d74c6;
+    width: 40px;
+    height: 40px;
+    color: white;
+    border-radius: 50%;
+}
+
+.fs-sm {
+    font-size: 14px !important;
+}
+

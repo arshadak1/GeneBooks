@@ -1,0 +1,32 @@
+{% extends "book/base.html" %}
+{% load static %}
+
+
+
+{% block title %}
+GeneBooks
+{% endblock title %}
+{% block body %}
+<div class="d-flex justify-content-center align-items-center flex-column mt-5 pt-5 container-sm text-center">
+    <div class="logo">
+        <img src="{% static 'book/img/book.png' %}" alt="" width="100" srcset="">
+    </div>
+    <div class="mx-md-5 px-md-5">
+        <div class="heading">
+            <h1 class="fw-semibold my-4 fs-1" style="font-size: 4rem !important;">Welcome to <span
+                    class="text-primary">GeneBooks</span></h1>
+        </div>
+        <div class="container-sm text-secondary">
+            <p class="my-4 fw-thin fs-4">Find books and authors you like. And if you don't find the author or book you
+                are looking for, we appreciate if you add them.</p>
+        </div>
+        <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center mt-5">
+            
+
+            <a href="{% url 'authors-home' %}"><button type="button" class="btn btn-primary btn-lg border-0 fs-3" style="background-color: #3c88c3 !important;">Find Authors</button></a>
+            <a href="{% url 'books-home' %}"><button type="button" class="btn btn-primary btn-lg border-0 fs-3 mt-3 mt-sm-0 ms-0 ms-sm-5" style="background-color: #3c88c3;">Find Books</button></a>
+
+        </div>
+    </div>
+</div>
+{% endblock body %}
