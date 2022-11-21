@@ -1,4 +1,4 @@
-import { TODAY, API_ENDPOINT, toCSV, getCsrf, setCardDetails } from "./index.js"
+import { TODAY, API_ENDPOINT, toCSV, getCsrf, setCardDetails, getFormattedDate } from "./index.js"
 // ___________________________________________________________
 // add book form datas and btn
 const add_book_btn = document.getElementById('add-book')
@@ -80,6 +80,7 @@ const setBookData = (book_details) => {
 
     book_details.forEach(book => {
         book.heading = book.name
+        book.date_of_publishing = getFormattedDate(book.date_of_publishing)
         book.detail = `<i>by </i> ${book.author_name}<br />Number of pages: ${book.number_of_pages}<br>Published: ${book.date_of_publishing}<br />Rating: ${book.average_critics_rating}`
     })
     setCardDetails(book_details)

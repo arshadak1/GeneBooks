@@ -3,6 +3,20 @@ export const API_ENDPOINT = `${ENDPOINT}/api/`
 
 export const TODAY = new Date()
 
+const MONTHS = {
+    1: 'Jan.',
+    2: 'Feb.',
+    3: 'March',
+    4: 'April',
+    5: 'May',
+    6: 'June',
+    7: 'July',
+    8: 'Aug.',
+    9: 'Sept.',
+    10: 'Oct.',
+    11: 'Nov.',
+    12: 'Dec.'
+}
 
 function setAttributes(el, options) {
     Object.keys(options).forEach(function (attr) {
@@ -108,4 +122,10 @@ export const toCSV = (url, download_url) => {
     })
 
     request.send()
+}
+
+export const getFormattedDate = (date) => {
+    // 1986-09-15 -> Sept. 15, 1986 
+    let date_arr = date.split('-')
+    return `${MONTHS[Number(date_arr[1])]} ${Number(date_arr[2])}, ${date_arr[0]}`
 }
