@@ -149,11 +149,13 @@ class BookCreateAPIView(generics.CreateAPIView):
 
 
     def create(self, request, *args, **kwargs):
-        if not request.data.get('author').isnumeric():
-            try:
-                request.data['author'] = Author.objects.get(name=request.data.get('author')).id
-            except:
-                pass
+        id = None
+        try:
+            id = int(request.data.get('author'))
+        except:
+            id = Author.objects.get(name=request.data.get('author')).id
+        finally:
+            request.data['author'] = id
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
