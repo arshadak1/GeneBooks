@@ -10,11 +10,19 @@
 <h4 align="center">A website to find all your favourite books and authors.</h4>
 
 <br>
+<p align="center">
+  <a href="#usage">Usage</a> •
+  <a href="#dependencies">Dependencies</a> •
+  <a href="#apis">APIs</a> •
+  <a href="#related">Related</a> •
+  <a href="#license">License</a>
+</p>
+<br>
 <img width="1459" alt="Screenshot 2022-11-21 at 6 49 38 PM" src="https://user-images.githubusercontent.com/75536974/203065484-2767258f-2d4d-4e53-9c90-db02ab60edb7.png">
 
 
 
-## Usage
+# Usage
 
 * Clone this repository:
 
@@ -40,7 +48,8 @@ $ pip install -r requirements.txt
 $ python manage.py runserevr
 ```
 And navigate to `http://127.0.0.1:8000/`.
-## Dependencies
+
+# Dependencies
 
 This software uses the following open source packages and frameworks:
 ```
@@ -57,7 +66,7 @@ sqlparse==0.4.3
 urllib3==1.26.12
 ```
 
-## APIs
+# APIs
 
 * Get all the authors data from `http://127.0.0.1:8000/api/authors`.
 * Get all the books data from `http://127.0.0.1:8000/api/books`.
@@ -69,7 +78,7 @@ urllib3==1.26.12
 [GeneBooks](https://projectsarshad.pythonanywhere.com/) - Web version of GeneBooks.
 
 
-## License
+# License
 
 MIT
 
