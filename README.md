@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <a href="https://projectsarshad.pythonanywhere.com/"><img src="https://user-images.githubusercontent.com/75536974/183626754-cd263053-d0fb-4e31-8348-6455abbe4912.png" alt="COL" width="200"></a>
+  <a href="https://projectsarshad.pythonanywhere.com/"><img src="https://user-images.githubusercontent.com/75536974/203064989-8ad6a0e3-4ec5-449c-b549-2ed29f5a3b15.png" alt="COL" width="100"></a>
   <br>
   GeneBooks
   <br>
@@ -10,7 +10,7 @@
 <h4 align="center">A website to find all your favourite books and authors.</h4>
 
 <br>
-
+<img width="1459" alt="Screenshot 2022-11-21 at 6 49 38 PM" src="https://user-images.githubusercontent.com/75536974/203065484-2767258f-2d4d-4e53-9c90-db02ab60edb7.png">
 
 
 
