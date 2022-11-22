@@ -68,10 +68,10 @@ urllib3==1.26.12
 
 # APIs
 
-* Get all the authors data from `http://127.0.0.1:8000/api/authors`.
-* Get all the books data from `http://127.0.0.1:8000/api/books`.
-* Get all the books of a specific author data from `http://127.0.0.1:8000/api/author-books` which takes `author-name` as a parameter.
-* Get all books with a certain rating or more from `http://127.0.0.1:8000/api/books-with-rating` which takes `average_critics_rating` as a parameter.
+* Get all the authors data from `http://127.0.0.1:8000/api/authors/`.
+* Get all the books data from `http://127.0.0.1:8000/api/books/`.
+* Get all the books of a specific author data from `http://127.0.0.1:8000/api/author-books/` which takes `author-name` as a parameter.
+* Get all books with a certain rating or more from `http://127.0.0.1:8000/api/books-with-rating/` which takes `average_critics_rating` as a parameter.
 
 # Related
 
