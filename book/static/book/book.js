@@ -234,7 +234,7 @@ book_rating.addEventListener('input', (e) => {
     changeRatingText("current-book-rating", book_rating)
 })
 
-book_search_btn.addEventListener('click', getBooks)
+book_search_field.addEventListener('input', getBooks)
 
 
 // filter event listeners

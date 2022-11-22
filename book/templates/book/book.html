@@ -102,12 +102,12 @@ Books - GeneBooks
         <!-- search input -->
         <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 gy-3">
             <div class="col">
-                <form action="">
+                <form action="" id="book-search-form" onsubmit="return false">
                     {% csrf_token %}
                     <div class="input-group">
                         <input type="text" class="form-control form-control-lg" id="book-search-field"
                             name="book-search-field" placeholder="Find Books" />
-                        <button class="btn btn-outline-secondary" type="button" id="book-search-btn">Search</button>
+                        <!-- <button class="btn btn-outline-secondary" type="button" id="book-search-btn">Search</button> -->
                     </div>
                 </form>
             </div>

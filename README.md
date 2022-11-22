@@ -73,7 +73,7 @@ urllib3==1.26.12
 * Get all the books of a specific author data from `http://127.0.0.1:8000/api/author-books` which takes `author-name` as a parameter.
 * Get all books with a certain rating or more from `http://127.0.0.1:8000/api/books-with-rating` which takes `average_critics_rating` as a parameter.
 
-## Related
+# Related
 
 [GeneBooks](https://projectsarshad.pythonanywhere.com/) - Web version of GeneBooks.
 

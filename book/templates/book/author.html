@@ -115,7 +115,7 @@
         <div class="container mt-4 text-center border-bottom pb-5">
             <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 gy-3">
                 <div class="col ">
-                    <form action="">
+                    <form action="" id="author-search-form" onsubmit="return false">
                         {% csrf_token %}
                         <div class="input-group">
                             <input type="text"
@@ -123,9 +123,9 @@
                                    id="author-field"
                                    name="author-field"
                                    placeholder="find authors"/>
-                            <button class="btn btn-outline-secondary"
+                            <!-- <button class="btn btn-outline-secondary"
                                     type="button"
-                                    id="author-search-btn">search</button>
+                                    id="author-search-btn">search</button> -->
                         </div>
                     </form>
                 </div>

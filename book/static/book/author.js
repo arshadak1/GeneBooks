@@ -4,8 +4,9 @@ import { API_ENDPOINT, toCSV, letterSpaceValidation, getCsrf, setCardDetails } f
 
 const add_author_btn = document.getElementById('add-author')
 
-const author_search_btn = document.getElementById('author-search-btn')
+// const author_search_btn = document.getElementById('author-search-btn')
 const author_search_field = document.getElementById('author-field')
+// const author_search_form = document.getElementById('author-search-form')
 
 // filters
 const age_filter_btn = document.getElementById('age-filter-btn')
@@ -185,7 +186,7 @@ const resetFilters = () => {
 // event listeners
 add_author_btn.addEventListener('click', submitAuthorDetails)
 
-author_search_btn.addEventListener('click', getAuthors)
+// author_search_btn.addEventListener('click', getAuthors)
 
 age_filter_btn.addEventListener('click', getAuthors)
 
@@ -201,4 +202,9 @@ csv_alert.querySelector('button').addEventListener('click', () => {
 authors_to_csv_btn.addEventListener('click', () => toCSV('authors-csv', 'authors-csv-download'))
 
 clear_filters.addEventListener('click', resetFilters)
+author_search_field.addEventListener('input', getAuthors)
+// author_search_form.addEventListener('submit', () => {
+//     e.preventDefault()
+//     getAuthors(e)
+// }, false)
 // getAuthors()
